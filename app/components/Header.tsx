@@ -104,13 +104,18 @@ export default function Header() {
                   onClick={(e) => {
                     e.preventDefault();
                     const sectionId = item.href.substring(1);
-                    const element = document.getElementById(sectionId);
-                    if (element) {
-                      const yOffset = -80; // Adjust for header height
-                      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                      window.scrollTo({ top: y, behavior: 'smooth' });
-                      setActiveSection(sectionId);
+                    
+                    if (sectionId === "home") {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                      const element = document.getElementById(sectionId);
+                      if (element) {
+                        const yOffset = -80; // Adjust for header height
+                        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                      }
                     }
+                    setActiveSection(sectionId);
                   }}
                 >
                   {item.label}
@@ -187,14 +192,19 @@ export default function Header() {
                         onClick={(e) => {
                           e.preventDefault();
                           const sectionId = item.href.substring(1);
-                          const element = document.getElementById(sectionId);
-                          if (element) {
-                            const yOffset = -80; // Adjust for header height
-                            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                            window.scrollTo({ top: y, behavior: 'smooth' });
-                            setActiveSection(sectionId);
-                            setMobileMenuOpen(false);
+                          
+                          if (sectionId === "home") {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          } else {
+                            const element = document.getElementById(sectionId);
+                            if (element) {
+                              const yOffset = -80; // Adjust for header height
+                              const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                              window.scrollTo({ top: y, behavior: 'smooth' });
+                            }
                           }
+                          setActiveSection(sectionId);
+                          setMobileMenuOpen(false);
                         }}
                       >
                         {item.label}
