@@ -43,9 +43,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 z-0"></div>
       <div className="absolute inset-0 bg-[url('/patterns/circuit-board.svg')] opacity-5 z-0"></div>
       
-      {/* Animated background shapes */}
+      {/* Animated background shapes - increased size and opacity for better visibility */}
       <motion.div 
-        className="absolute top-20 left-10 w-64 h-64 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-30 z-0"
+        className="absolute top-20 left-10 w-96 h-96 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-40 z-0"
         animate={{ 
           x: [0, 30, 0],
           y: [0, 50, 0],
@@ -58,7 +58,7 @@ export default function Hero() {
       />
       
       <motion.div 
-        className="absolute bottom-20 right-10 w-80 h-80 bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-30 z-0"
+        className="absolute bottom-20 right-10 w-[30rem] h-[30rem] bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-40 z-0"
         animate={{ 
           x: [0, -30, 0],
           y: [0, -50, 0],
@@ -182,9 +182,9 @@ export default function Hero() {
         >
           {/* Profile image with animated border */}
           <div className="relative w-64 h-64 md:w-80 md:h-80">
-            {/* Decorative background circles - centered properly */}
+            {/* Decorative background circle - truly centered on the profile */}
             <motion.div 
-              className="absolute -z-10 w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              className="absolute -z-10 w-full h-full rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20"
               animate={{
                 scale: [1, 1.05, 1],
               }}
