@@ -191,20 +191,24 @@ export default function Header() {
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          const sectionId = item.href.substring(1);
-                          
-                          if (sectionId === "home") {
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          } else {
-                            const element = document.getElementById(sectionId);
-                            if (element) {
-                              const yOffset = -80; // Adjust for header height
-                              const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                              window.scrollTo({ top: y, behavior: 'smooth' });
-                            }
-                          }
-                          setActiveSection(sectionId);
                           setMobileMenuOpen(false);
+                          
+                          // Small delay to allow menu to close before scrolling
+                          setTimeout(() => {
+                            const sectionId = item.href.substring(1);
+                            
+                            if (sectionId === "home") {
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                            } else {
+                              const element = document.getElementById(sectionId);
+                              if (element) {
+                                const yOffset = -80;
+                                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                                window.scrollTo({ top: y, behavior: 'smooth' });
+                              }
+                            }
+                            setActiveSection(sectionId);
+                          }, 100);
                         }}
                       >
                         {item.label}
