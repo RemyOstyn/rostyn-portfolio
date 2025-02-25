@@ -1,6 +1,6 @@
 import { IconType } from 'react-icons';
 import { 
-  SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiHtml5, SiCss3,
+  SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiHtml5,
   SiTailwindcss, SiVuedotjs, SiAngular, SiRedux, SiSass,
   SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGraphql,
   SiMysql, SiFirebase, SiPython, SiDjango, SiFlask,
