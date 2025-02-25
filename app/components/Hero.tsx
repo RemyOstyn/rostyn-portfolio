@@ -13,17 +13,6 @@ const showcaseTechnologies = [
 
 export default function Hero() {
   const [currentTechIndex, setCurrentTechIndex] = useState(0);
-  const controls = useAnimation();
-  const isMountedRef = useRef(false);
-  
-  // Set mounted ref after component mounts
-  useEffect(() => {
-    isMountedRef.current = true;
-    return () => {
-      isMountedRef.current = false;
-    };
-  }, []);
-  
   // Rotate through technologies
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,36 +24,6 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  // Animate on scroll
-  useEffect(() => {
-    let mounted = false;
-    const handleScroll = () => {
-      if (mounted && isMountedRef.current && controls) {
-        const scrollY = window.scrollY;
-        requestAnimationFrame(() => {
-          controls.start({ y: scrollY * 0.1 }).catch(() => {
-            // Ignore animation cancellation
-          });
-        });
-      }
-    };
-
-    // Ensure component is fully mounted before setting up scroll
-    const mountTimeout = setTimeout(() => {
-      mounted = true;
-      if (isMountedRef.current) {
-        window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Initial position
-      }
-    }, 500);
-
-    return () => {
-      mounted = false;
-      clearTimeout(mountTimeout);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [controls]);
-
   return (
     <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
       {/* Background elements */}
@@ -74,8 +33,7 @@ export default function Hero() {
       {/* Animated background shapes - increased size and opacity for better visibility */}
       <motion.div 
         className="absolute top-20 left-10 w-96 h-96 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-40 z-0"
-        initial={{ x: 0, y: 0 }}
-        whileInView={{ 
+        animate={{ 
           x: [0, 30, 0],
           y: [0, 50, 0],
         }}
@@ -88,8 +46,7 @@ export default function Hero() {
       
       <motion.div 
         className="absolute bottom-20 right-10 w-[30rem] h-[30rem] bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-40 z-0"
-        initial={{ x: 0, y: 0 }}
-        whileInView={{ 
+        animate={{ 
           x: [0, -30, 0],
           y: [0, -50, 0],
         }}
