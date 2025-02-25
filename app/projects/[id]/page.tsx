@@ -3,8 +3,9 @@ import { Metadata } from "next";
 import { projects } from "../../data/projects";
 import ProjectDisplay from "@/app/components/ProjectDisplay";
 
-type Props = {
-  params: { id: string }
+interface Props {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata(
