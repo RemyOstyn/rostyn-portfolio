@@ -4,7 +4,7 @@ import {
   SiTailwindcss, SiVuedotjs, SiAngular, SiRedux, SiSass,
   SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGraphql,
   SiMysql, SiFirebase, SiPython, SiDjango, SiFlask,
-  SiDocker, SiGit, SiAmazonaws, SiGithubactions, SiTensorflow,
+  SiDocker, SiGit, SiAmazon, SiGithubactions, SiTensorflow,
   SiOpenai, SiStripe
 } from 'react-icons/si';
 import { FaCode, FaBrain } from 'react-icons/fa';
@@ -43,7 +43,7 @@ const iconMap: Record<string, IconType> = {
   // Other
   "Docker": SiDocker,
   "Git": SiGit,
-  "AWS": SiAmazonaws,
+  "AWS": SiAmazon,
   "CI/CD": SiGithubactions,
   "TensorFlow": SiTensorflow,
   "NLP": FaBrain,
