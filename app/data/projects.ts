@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description: "AI-powered platform for writing books and video scripts",
     longDescription: "Developed an innovative web application that leverages AI to help users write books and video scripts. The platform uses a system of four specialized AI agents working together: a writing framework agent, an outline agent, a paragraph generator, and a critique agent to produce high-quality content.",
     technologies: ["Next.js", "Supabase", "FastAPI", "LangChain", "OpenAI API", "TypeScript"],
-    imageUrl: "/images/narator-ai.jpg",
+    imageUrl: "/images/narator.jpg",
     screenshots: ["/images/narator-ai-1.jpg", "/images/narator-ai-2.jpg"],
     githubUrl: "https://github.com/yourusername/narator-ai",
     liveUrl: "https://narator.ai",
