@@ -172,20 +172,16 @@ export default function Hero() {
               ))}
             </div>
             
-            <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+            {/* <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
               <span className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-md mr-2 mb-2">
                 <TechIcon name="Offline-First" size={14} className="mr-1" />
                 Offline-First
               </span>
               <span className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-md mr-2 mb-2">
-                <TechIcon name="LangChain" size={14} className="mr-1" />
-                LangChain
-              </span>
-              <span className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-md mr-2 mb-2">
                 <TechIcon name="Expo" size={14} className="mr-1" />
                 Expo
               </span>
-            </div>
+            </div> */}
           </motion.div>
         </motion.div>
         
