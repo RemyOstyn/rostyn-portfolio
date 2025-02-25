@@ -4,8 +4,8 @@ import {
   SiTailwindcss, SiVuedotjs, SiAngular, SiRedux, SiSass,
   SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGraphql,
   SiMysql, SiFirebase, SiPython, SiDjango, SiFlask,
-  SiDocker, SiGit, SiAmazonaws, SiGithubactions, SiTensorflow,
-  SiOpenai, SiStripe, SiSupabase, SiFastapi, SiExpo, SiFramer
+  SiDocker, SiGit, SiAmazon, SiGithubactions, SiTensorflow,
+  SiOpenai, SiStripe, SiSupabase, SiFastapi, SiExpo, SiFramer, SiLangchain
 } from 'react-icons/si';
 import { FaCode, FaBrain, FaMobileAlt, FaReact } from 'react-icons/fa';
 
@@ -50,13 +50,13 @@ const iconMap: Record<string, IconType> = {
   // Other
   "Docker": SiDocker,
   "Git": SiGit,
-  "AWS": SiAmazonaws,
+  "AWS": SiAmazon,
   "CI/CD": SiGithubactions,
   "TensorFlow": SiTensorflow,
   "NLP": FaBrain,
   "OpenAI API": SiOpenai,
   "Stripe API": SiStripe,
-  "LangChain": FaCode,
+  "LangChain": SiLangchain,
   "Framer Motion": SiFramer,
 };
 
