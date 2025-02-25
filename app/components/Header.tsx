@@ -105,7 +105,7 @@ export default function Header() {
         {/* Theme toggle and resume button */}
         <div className="hidden md:flex items-center space-x-4">
           <a
-            href="/resume.pdf"
+            href="/Remy_Ostyn_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg text-sm font-medium hover:from-blue-700 hover:to-indigo-700 transition-colors shadow-md hover:shadow-lg"
@@ -170,7 +170,7 @@ export default function Header() {
                   ))}
                   <li>
                     <a
-                      href="/resume.pdf"
+                      href="/Remy_Ostyn_Resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium"
