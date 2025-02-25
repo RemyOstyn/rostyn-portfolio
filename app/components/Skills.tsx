@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TechIcon from "./TechIcon";
 
@@ -101,6 +101,32 @@ const skills: Skill[] = [
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState<"frontend" | "backend" | "other" | "all">("all");
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+  
+  // Detect when the page is scrolling
+  useEffect(() => {
+    let scrollTimer: NodeJS.Timeout;
+    
+    const handleScroll = () => {
+      setIsScrolling(true);
+      setHoveredSkill(null);
+      
+      // Clear any existing timer
+      clearTimeout(scrollTimer);
+      
+      // Set a timer to detect when scrolling stops
+      scrollTimer = setTimeout(() => {
+        setIsScrolling(false);
+      }, 100);
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimer);
+    };
+  }, []);
 
   const filteredSkills = activeCategory === "all" 
     ? skills 
@@ -165,17 +191,13 @@ export default function Skills() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 className="relative group pointer-events-auto"
-                onMouseEnter={(e) => {
-                  // Only handle hover if not currently scrolling
-                  if (!document.documentElement.style.scrollBehavior) {
+                onMouseEnter={() => {
+                  if (!isScrolling) {
                     setHoveredSkill(skill.name);
                   }
                 }}
-                onMouseLeave={(e) => {
-                  // Only handle hover if not currently scrolling
-                  if (!document.documentElement.style.scrollBehavior) {
-                    setHoveredSkill(null);
-                  }
+                onMouseLeave={() => {
+                  setHoveredSkill(null);
                 }}
               >
                 <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full transform hover:-translate-y-1">
