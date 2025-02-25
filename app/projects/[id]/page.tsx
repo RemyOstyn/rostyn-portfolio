@@ -5,7 +5,7 @@ import ProjectDisplay from "@/app/components/ProjectDisplay";
 export default async function ProjectPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ id: string }>
 }) {
   const resolvedParams = await params;
   const project = projects.find((p) => p.id === resolvedParams.id);
