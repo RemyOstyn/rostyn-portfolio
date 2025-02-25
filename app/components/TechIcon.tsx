@@ -4,10 +4,10 @@ import {
   SiTailwindcss, SiVuedotjs, SiAngular, SiRedux, SiSass,
   SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiGraphql,
   SiMysql, SiFirebase, SiPython, SiDjango, SiFlask,
-  SiDocker, SiGit, SiAmazon, SiGithubactions, SiTensorflow,
-  SiOpenai, SiStripe, SiSupabase, SiFastapi, SiExpo
+  SiDocker, SiGit, SiAmazonaws, SiGithubactions, SiTensorflow,
+  SiOpenai, SiStripe, SiSupabase, SiFastapi, SiExpo, SiFramer
 } from 'react-icons/si';
-import { FaCode, FaBrain, FaMobileAlt } from 'react-icons/fa';
+import { FaCode, FaBrain, FaMobileAlt, FaReact } from 'react-icons/fa';
 
 interface TechIconProps {
   name: string;
@@ -43,21 +43,21 @@ const iconMap: Record<string, IconType> = {
   "Supabase": SiSupabase,
   
   // Mobile
-  "React Native": SiReact,
+  "React Native": FaReact,
   "Expo": SiExpo,
   "Offline-First": FaMobileAlt,
   
   // Other
   "Docker": SiDocker,
   "Git": SiGit,
-  "AWS": SiAmazon,
+  "AWS": SiAmazonaws,
   "CI/CD": SiGithubactions,
   "TensorFlow": SiTensorflow,
   "NLP": FaBrain,
   "OpenAI API": SiOpenai,
   "Stripe API": SiStripe,
   "LangChain": FaCode,
-  "Framer Motion": FaCode,
+  "Framer Motion": SiFramer,
 };
 
 export default function TechIcon({ name, size = 24, className = "" }: TechIconProps) {

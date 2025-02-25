@@ -171,6 +171,21 @@ export default function Hero() {
                 </motion.div>
               ))}
             </div>
+            
+            <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+              <span className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-md mr-2 mb-2">
+                <TechIcon name="Offline-First" size={14} className="mr-1" />
+                Offline-First
+              </span>
+              <span className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-md mr-2 mb-2">
+                <TechIcon name="LangChain" size={14} className="mr-1" />
+                LangChain
+              </span>
+              <span className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-md mr-2 mb-2">
+                <TechIcon name="Expo" size={14} className="mr-1" />
+                Expo
+              </span>
+            </div>
           </motion.div>
         </motion.div>
         
@@ -239,7 +254,7 @@ export default function Hero() {
             whileHover={{ y: 5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <TechIcon name="Node.js" size={20} className="mr-2" />
+            <TechIcon name="Next.js" size={20} className="mr-2" />
             <span className="text-sm font-medium">Full Stack</span>
           </motion.div>
           
@@ -252,8 +267,8 @@ export default function Hero() {
             whileHover={{ x: -5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <TechIcon name="TypeScript" size={20} className="mr-2" />
-            <span className="text-sm font-medium">TypeScript Pro</span>
+            <TechIcon name="React Native" size={20} className="mr-2" />
+            <span className="text-sm font-medium">Mobile Dev</span>
           </motion.div>
           
           <motion.div
@@ -264,8 +279,8 @@ export default function Hero() {
             whileHover={{ x: 5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <TechIcon name="Tailwind CSS" size={20} className="mr-2" />
-            <span className="text-sm font-medium">UI Designer</span>
+            <TechIcon name="Supabase" size={20} className="mr-2" />
+            <span className="text-sm font-medium">DB Expert</span>
           </motion.div>
           
           <motion.div
@@ -276,8 +291,8 @@ export default function Hero() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <TechIcon name="AWS" size={20} className="mr-2" />
-            <span className="text-sm font-medium">Cloud Expert</span>
+            <TechIcon name="OpenAI API" size={20} className="mr-2" />
+            <span className="text-sm font-medium">AI Engineer</span>
           </motion.div>
           
           <motion.div
@@ -288,8 +303,8 @@ export default function Hero() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <TechIcon name="GraphQL" size={20} className="mr-2" />
-            <span className="text-sm font-medium">API Architect</span>
+            <TechIcon name="FastAPI" size={20} className="mr-2" />
+            <span className="text-sm font-medium">API Builder</span>
           </motion.div>
         </motion.div>
       </div>
