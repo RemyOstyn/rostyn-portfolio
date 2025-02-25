@@ -86,7 +86,14 @@ export default function Header() {
                       ? "text-blue-600 dark:text-blue-400"
                       : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
                   }`}
-                  onClick={() => setActiveSection(item.href.substring(1))}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById(item.href.substring(1));
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                      setActiveSection(item.href.substring(1));
+                    }
+                  }}
                 >
                   {item.label}
                   {activeSection === item.href.substring(1) && (
@@ -159,9 +166,14 @@ export default function Header() {
                             ? "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
                             : "text-gray-700 dark:text-gray-300"
                         }`}
-                        onClick={() => {
-                          setActiveSection(item.href.substring(1));
-                          setMobileMenuOpen(false);
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const element = document.getElementById(item.href.substring(1));
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                            setActiveSection(item.href.substring(1));
+                            setMobileMenuOpen(false);
+                          }
                         }}
                       >
                         {item.label}
