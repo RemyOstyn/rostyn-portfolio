@@ -214,7 +214,7 @@ export default function Hero() {
             
             {/* Floating badges */}
             <motion.div
-              className="absolute -right-4 top-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center"
+              className="absolute -right-4 top-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-10"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
@@ -225,7 +225,7 @@ export default function Hero() {
             </motion.div>
             
             <motion.div
-              className="absolute -left-6 bottom-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center"
+              className="absolute -left-6 bottom-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-10"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2, duration: 0.5 }}
