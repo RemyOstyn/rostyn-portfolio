@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { projects } from "../../data/projects";
 import ProjectDisplay from "@/app/components/ProjectDisplay";
 
