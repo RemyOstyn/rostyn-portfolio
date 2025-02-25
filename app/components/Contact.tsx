@@ -76,8 +76,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-medium">Phone</h4>
-                    <p className="text-gray-600 dark:text-gray-300">+1 (123) 456-7890</p>
+                    <h4 className="font-medium">Phone (Thailand)</h4>
+                    <p className="text-gray-600 dark:text-gray-300">+66957852705</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -99,7 +99,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-gray-600 dark:text-gray-300">your.email@example.com</p>
+                    <p className="text-gray-600 dark:text-gray-300">ostyn.r@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -121,7 +121,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium">Location</h4>
-                    <p className="text-gray-600 dark:text-gray-300">San Francisco, CA</p>
+                    <p className="text-gray-600 dark:text-gray-300">Bangkok, Thailand</p>
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function Contact() {
               <h3 className="text-xl font-bold mt-8 mb-4">Connect</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/RemyOstyn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -149,7 +149,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/rostyn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -170,7 +170,7 @@ export default function Contact() {
                     <circle cx="4" cy="4" r="2"></circle>
                   </svg>
                 </a>
-                <a
+                {/* <a
                   href="https://twitter.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -189,7 +189,7 @@ export default function Contact() {
                   >
                     <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
                   </svg>
-                </a>
+                </a> */}
               </div>
             </motion.div>
 
