@@ -243,7 +243,6 @@ export default function Hero() {
             <TechIcon name="Node.js" size={20} className="mr-2" />
             <span className="text-sm font-medium">Full Stack</span>
           </motion.div>
-          </div>
         </motion.div>
       </div>
       
