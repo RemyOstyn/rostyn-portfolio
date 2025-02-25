@@ -164,9 +164,19 @@ export default function Skills() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="relative group"
-                onMouseEnter={() => setHoveredSkill(skill.name)}
-                onMouseLeave={() => setHoveredSkill(null)}
+                className="relative group pointer-events-auto"
+                onMouseEnter={(e) => {
+                  // Only handle hover if not currently scrolling
+                  if (!document.documentElement.style.scrollBehavior) {
+                    setHoveredSkill(skill.name);
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  // Only handle hover if not currently scrolling
+                  if (!document.documentElement.style.scrollBehavior) {
+                    setHoveredSkill(null);
+                  }
+                }}
               >
                 <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full transform hover:-translate-y-1">
                   <div className="p-6">
