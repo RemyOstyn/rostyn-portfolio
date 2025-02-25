@@ -196,7 +196,7 @@ export default function Hero() {
             {/* Profile image */}
             <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-white dark:border-gray-800">
               <Image
-                src="/images/profile.jpg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/profile.jpg`}
                 alt="Remy Ostyn"
                 fill
                 className="object-cover"
