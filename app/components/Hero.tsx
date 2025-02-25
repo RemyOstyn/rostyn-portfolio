@@ -77,8 +77,8 @@ export default function Hero() {
               Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Remy Ostyn</span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 leading-relaxed">
-              Crafting digital experiences with <span className="relative">
-                <span className="absolute inset-0 flex items-center">
+              Crafting digital experiences with <span className="relative inline-block min-w-[180px]">
+                <span className="absolute inset-0 flex items-center whitespace-nowrap">
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={currentTechIndex}
@@ -92,7 +92,7 @@ export default function Hero() {
                     </motion.span>
                   </AnimatePresence>
                 </span>
-                <span className="invisible">placeholder</span>
+                <span className="invisible whitespace-nowrap">React Native</span>
               </span>
             </h2>
           </motion.div>
