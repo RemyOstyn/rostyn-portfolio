@@ -180,27 +180,22 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="relative flex justify-center"
         >
-          {/* Decorative elements */}
-          <motion.div 
-            className="absolute -z-10 w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20"
-            animate={controls}
-          />
-          
-          <motion.div 
-            className="absolute -z-10 w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-200 to-indigo-200 dark:from-blue-900/30 dark:to-indigo-900/30 top-10 -right-5"
-            animate={{
-              scale: [1, 1.05, 1],
-              rotate: [0, 5, 0],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          
           {/* Profile image with animated border */}
           <div className="relative w-64 h-64 md:w-80 md:h-80">
+            {/* Decorative background circles - centered properly */}
+            <motion.div 
+              className="absolute -z-10 w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              animate={{
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            
+            {/* Animated border */}
             <motion.div 
               className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"
               animate={{ rotate: 360 }}
@@ -210,10 +205,12 @@ export default function Hero() {
                 ease: "linear" 
               }}
             />
+            
+            {/* Profile image */}
             <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-white dark:border-gray-800">
               <Image
                 src="/images/profile.jpg"
-                alt="Your Name"
+                alt="Remy Ostyn"
                 fill
                 className="object-cover"
                 priority
@@ -221,24 +218,26 @@ export default function Hero() {
             </div>
           </div>
           
-          {/* Floating badges - moved outside the profile image container */}
+          {/* Skill badges - positioned better and with animation */}
           <motion.div
-            className="absolute -right-4 top-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="absolute right-0 md:right-5 top-0 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
             whileHover={{ y: -5 }}
+            whileTap={{ scale: 0.95 }}
           >
             <TechIcon name="React" size={20} className="mr-2" />
             <span className="text-sm font-medium">React Expert</span>
           </motion.div>
           
           <motion.div
-            className="absolute -left-6 bottom-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="absolute left-0 md:left-5 bottom-0 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.5 }}
-            whileHover={{ y: -5 }}
+            whileHover={{ y: 5 }}
+            whileTap={{ scale: 0.95 }}
           >
             <TechIcon name="Node.js" size={20} className="mr-2" />
             <span className="text-sm font-medium">Full Stack</span>
