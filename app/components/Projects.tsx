@@ -173,10 +173,10 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+            className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-6"
           >
             <StatsCard 
-              number={projects.length} 
+              number={8} 
               label="Projects Completed" 
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -194,7 +194,7 @@ export default function Projects() {
               } 
             />
             <StatsCard 
-              number={4} 
+              number={7} 
               label="Years Experience" 
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -202,15 +202,15 @@ export default function Projects() {
                 </svg>
               } 
             />
-            <StatsCard 
-              number={15} 
+            {/* <StatsCard 
+              number={5} 
               label="Happy Clients" 
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               } 
-            />
+            /> */}
           </motion.div>
         )}
       </div>
