@@ -28,18 +28,27 @@ export default function Hero() {
 
   // Animate on scroll
   useEffect(() => {
+    let isMounted = true;
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (controls) {
+      if (isMounted && controls) {
         controls.start({ y: scrollY * 0.1 });
       }
     };
 
-    // Initial animation
-    handleScroll();
+    // Wait for next frame before initial animation
+    requestAnimationFrame(() => {
+      if (isMounted) {
+        handleScroll();
+      }
+    });
     
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      isMounted = false;
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [controls]);
 
   return (
