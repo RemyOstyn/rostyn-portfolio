@@ -4,36 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1500);
-  };
+  // No state needed for simple email link
 
   return (
     <section id="contact" className="py-20">
@@ -197,63 +168,35 @@ export default function Contact() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-col items-center justify-center h-full"
             >
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block mb-2 font-medium">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block mb-2 font-medium">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block mb-2 font-medium">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-400"
+              <div className="text-center max-w-md mx-auto">
+                <h3 className="text-xl font-bold mb-4">Send Me an Email</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  I'd love to hear from you! Click the button below to send me an email directly.
+                </p>
+                <a
+                  href="mailto:ostyn.r@gmail.com"
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
-                {submitSuccess && (
-                  <p className="text-green-600 dark:text-green-400 mt-2">
-                    Your message has been sent successfully!
-                  </p>
-                )}
-              </form>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mr-2"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  Email Me
+                </a>
+              </div>
             </motion.div>
           </div>
         </div>
