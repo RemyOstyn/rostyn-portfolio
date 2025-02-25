@@ -1,14 +1,23 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import type { ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import TechIcon from "./TechIcon";
+
+type SkillCategory = "frontend" | "backend" | "other";
+type CategoryId = SkillCategory | "all";
 
 interface Skill {
   name: string;
   level: number;
-  category: "frontend" | "backend" | "other";
+  category: SkillCategory;
   description?: string;
+}
+
+interface CategoryTab {
+  id: CategoryId;
+  label: string;
 }
 
 const skills: Skill[] = [
@@ -99,7 +108,7 @@ const skills: Skill[] = [
 ];
 
 export default function Skills() {
-  const [activeCategory, setActiveCategory] = useState<"frontend" | "backend" | "other" | "all">("all");
+  const [activeCategory, setActiveCategory] = useState<CategoryId>("all");
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const [isScrolling, setIsScrolling] = useState(false);
   
@@ -132,7 +141,7 @@ export default function Skills() {
     ? skills 
     : skills.filter(skill => skill.category === activeCategory);
 
-  const categories = [
+  const categories: CategoryTab[] = [
     { id: "all", label: "All Skills" },
     { id: "frontend", label: "Frontend & Mobile" },
     { id: "backend", label: "Backend & AI" },
@@ -167,7 +176,7 @@ export default function Skills() {
             {categories.map((category) => (
               <button
                 key={category.id}
-                onClick={() => setActiveCategory(category.id as any)}
+                onClick={() => setActiveCategory(category.id)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeCategory === category.id
                     ? "bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm"
