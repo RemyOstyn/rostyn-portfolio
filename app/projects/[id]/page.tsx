@@ -58,12 +58,12 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </Link>
 
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-          <div className="relative h-64 md:h-96 w-full">
+          <div className="relative w-full aspect-video">
             <Image
               src={project.imageUrl}
               alt={project.title}
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </div>
@@ -146,12 +146,12 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             <h2 className="text-2xl font-bold mb-6">Screenshots</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {project.screenshots.map((screenshot, index) => (
-                <div key={index} className="relative h-64 rounded-lg overflow-hidden shadow-md">
+                <div key={index} className="relative aspect-video rounded-lg overflow-hidden shadow-md">
                   <Image
                     src={screenshot}
                     alt={`${project.title} screenshot ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
               ))}
