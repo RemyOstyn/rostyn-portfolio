@@ -7,8 +7,8 @@ import TechIcon from "./TechIcon";
 
 // Technologies to showcase in the rotating display
 const showcaseTechnologies = [
-  "React", "Next.js", "TypeScript", "Node.js", 
-  "Tailwind CSS", "MongoDB", "GraphQL", "AWS"
+  "React", "Next.js", "TypeScript", "React Native", 
+  "Tailwind CSS", "Supabase", "FastAPI", "LangChain"
 ];
 
 export default function Hero() {

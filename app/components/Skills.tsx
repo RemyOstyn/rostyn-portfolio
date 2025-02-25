@@ -20,87 +20,105 @@ const skills: Skill[] = [
   },
   { 
     name: "TypeScript", 
-    level: 85, 
+    level: 90, 
     category: "frontend",
-    description: "Strong TypeScript skills with focus on type safety and scalable application architecture."
+    description: "Strong TypeScript skills with focus on type safety and scalable application architecture for web and mobile projects."
   },
   { 
     name: "React", 
-    level: 90, 
+    level: 95, 
     category: "frontend",
-    description: "Advanced React development including hooks, context API, and performance optimization."
+    description: "Advanced React development including hooks, context API, and performance optimization for complex applications."
   },
   { 
     name: "Next.js", 
-    level: 85, 
+    level: 90, 
     category: "frontend",
-    description: "Building SEO-friendly, server-rendered React applications with optimized performance."
-  },
-  { 
-    name: "HTML/CSS", 
-    level: 95, 
-    category: "frontend",
-    description: "Semantic HTML and advanced CSS including animations, Grid, and Flexbox layouts."
+    description: "Building SEO-friendly, server-rendered React applications with optimized performance and modern features."
   },
   { 
     name: "Tailwind CSS", 
     level: 90, 
     category: "frontend",
-    description: "Rapid UI development with utility-first approach and custom design systems."
+    description: "Rapid UI development with utility-first approach and custom design systems for responsive interfaces."
+  },
+  { 
+    name: "Framer Motion", 
+    level: 85, 
+    category: "frontend",
+    description: "Creating fluid animations and interactive UI components with React's most popular animation library."
+  },
+  { 
+    name: "React Native", 
+    level: 85, 
+    category: "frontend",
+    description: "Developing cross-platform mobile applications with native performance using React paradigms."
+  },
+  { 
+    name: "Expo", 
+    level: 85, 
+    category: "frontend",
+    description: "Streamlining React Native development with powerful tools and services for mobile app creation and deployment."
+  },
+  { 
+    name: "Supabase", 
+    level: 85, 
+    category: "backend",
+    description: "Building applications with this open-source Firebase alternative, leveraging PostgreSQL, authentication, and storage."
+  },
+  { 
+    name: "FastAPI", 
+    level: 80, 
+    category: "backend",
+    description: "Creating high-performance Python APIs with automatic interactive documentation and data validation."
+  },
+  { 
+    name: "LangChain", 
+    level: 80, 
+    category: "backend",
+    description: "Developing AI applications by chaining together large language models with custom logic and external data sources."
+  },
+  { 
+    name: "OpenAI API", 
+    level: 85, 
+    category: "backend",
+    description: "Integrating advanced AI capabilities into applications using OpenAI's powerful language models."
+  },
+  { 
+    name: "PostgreSQL", 
+    level: 85, 
+    category: "backend",
+    description: "Designing and optimizing relational databases for complex data requirements and high performance."
   },
   { 
     name: "Node.js", 
     level: 80, 
     category: "backend",
-    description: "Building scalable server-side applications and RESTful APIs."
+    description: "Building scalable server-side applications and RESTful APIs with JavaScript runtime."
   },
   { 
-    name: "Express", 
+    name: "Offline-First", 
     level: 85, 
-    category: "backend",
-    description: "Creating robust backend services with middleware, authentication, and error handling."
+    category: "other",
+    description: "Designing applications that work seamlessly without internet connectivity and sync when connection is restored."
   },
   { 
-    name: "MongoDB", 
-    level: 75, 
-    category: "backend",
-    description: "NoSQL database design, aggregation pipelines, and performance optimization."
-  },
-  { 
-    name: "PostgreSQL", 
+    name: "AWS", 
     level: 80, 
-    category: "backend",
-    description: "Relational database design, complex queries, and transaction management."
-  },
-  { 
-    name: "GraphQL", 
-    level: 70, 
-    category: "backend",
-    description: "Schema design, resolvers, and integration with various frontend frameworks."
+    category: "other",
+    description: "Deploying and managing cloud infrastructure including EC2, S3, Lambda, and other AWS services."
   },
   { 
     name: "Docker", 
-    level: 75, 
+    level: 80, 
     category: "other",
-    description: "Containerization of applications for consistent development and deployment environments."
+    description: "Containerizing applications for consistent development and deployment environments across platforms."
   },
   { 
     name: "Git", 
     level: 90, 
     category: "other",
-    description: "Advanced version control workflows, branching strategies, and collaborative development."
-  },
-  { 
-    name: "AWS", 
-    level: 70, 
-    category: "other",
-    description: "Cloud infrastructure including EC2, S3, Lambda, and deployment pipelines."
-  },
-  { 
-    name: "CI/CD", 
-    level: 75, 
-    category: "other",
-    description: "Automated testing and deployment workflows using GitHub Actions and Jenkins."
+    description: "Advanced version control workflows, branching strategies, and collaborative development practices."
   },
 ];
 
@@ -114,8 +132,8 @@ export default function Skills() {
 
   const categories = [
     { id: "all", label: "All Skills" },
-    { id: "frontend", label: "Frontend" },
-    { id: "backend", label: "Backend" },
+    { id: "frontend", label: "Frontend & Mobile" },
+    { id: "backend", label: "Backend & AI" },
     { id: "other", label: "DevOps & Tools" }
   ];
 
