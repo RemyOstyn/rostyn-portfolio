@@ -146,7 +146,7 @@ export default function Header() {
         
         {/* Mobile menu button */}
         <button
-          className="md:hidden relative z-10 p-2"
+          className="md:hidden relative z-10 p-2 -mr-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -175,7 +175,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden glass"
+            className="md:hidden glass fixed left-0 right-0"
           >
             <div className="container mx-auto px-4 py-4">
               <nav>
