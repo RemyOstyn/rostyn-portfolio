@@ -30,9 +30,14 @@ export default function Hero() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      controls.start({ y: scrollY * 0.1 });
+      if (controls) {
+        controls.start({ y: scrollY * 0.1 });
+      }
     };
 
+    // Initial animation
+    handleScroll();
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [controls]);
