@@ -13,12 +13,6 @@ interface Skill {
 
 const skills: Skill[] = [
   { 
-    name: "JavaScript", 
-    level: 90, 
-    category: "frontend",
-    description: "Expert in modern JavaScript (ES6+) with 5+ years of experience building interactive web applications."
-  },
-  { 
     name: "TypeScript", 
     level: 90, 
     category: "frontend",
@@ -41,12 +35,6 @@ const skills: Skill[] = [
     level: 90, 
     category: "frontend",
     description: "Rapid UI development with utility-first approach and custom design systems for responsive interfaces."
-  },
-  { 
-    name: "Framer Motion", 
-    level: 85, 
-    category: "frontend",
-    description: "Creating fluid animations and interactive UI components with React's most popular animation library."
   },
   { 
     name: "React Native", 
@@ -103,22 +91,10 @@ const skills: Skill[] = [
     description: "Designing applications that work seamlessly without internet connectivity and sync when connection is restored."
   },
   { 
-    name: "AWS", 
-    level: 80, 
-    category: "other",
-    description: "Deploying and managing cloud infrastructure including EC2, S3, Lambda, and other AWS services."
-  },
-  { 
     name: "Docker", 
     level: 80, 
     category: "other",
     description: "Containerizing applications for consistent development and deployment environments across platforms."
-  },
-  { 
-    name: "Git", 
-    level: 90, 
-    category: "other",
-    description: "Advanced version control workflows, branching strategies, and collaborative development practices."
   },
 ];
 
@@ -236,7 +212,7 @@ export default function Skills() {
         </div>
 
         {/* Skill Connections Visualization */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
@@ -246,11 +222,11 @@ export default function Skills() {
           <div className="relative h-64 md:h-80 bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
               <p className="text-gray-400 dark:text-gray-500 text-sm">Interactive skill visualization coming soon</p>
-            </div>
+            </div> */}
             {/* This is a placeholder for a future interactive visualization */}
-            <div className="absolute inset-0 opacity-10 bg-[url('/patterns/tech-pattern.svg')]"></div>
+            {/* <div className="absolute inset-0 opacity-10 bg-[url('/patterns/tech-pattern.svg')]"></div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
