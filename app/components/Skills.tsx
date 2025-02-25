@@ -164,7 +164,7 @@ export default function Skills() {
             Technical Expertise
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            I've mastered a diverse range of technologies to deliver exceptional digital experiences.
+            I&apos;ve mastered a diverse range of technologies to deliver exceptional digital experiences.
             Hover over each skill to learn more about my expertise.
           </p>
         </motion.div>

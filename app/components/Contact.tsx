@@ -172,7 +172,7 @@ export default function Contact() {
               <div className="text-center max-w-md mx-auto">
                 <h3 className="text-xl font-bold mb-4">Send Me an Email</h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  I'd love to hear from you! Click the button below to send me an email directly.
+                  I&apos;d love to hear from you! Click the button below to send me an email directly.
                 </p>
                 <a
                   href="mailto:ostyn.r@gmail.com"
