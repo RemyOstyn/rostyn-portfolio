@@ -200,8 +200,16 @@ export default function Hero() {
           />
           
           {/* Profile image with animated border */}
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 animate-spin-slow"></div>
+          <div className="relative w-64 h-64 md:w-80 md:h-80">
+            <motion.div 
+              className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"
+              animate={{ rotate: 360 }}
+              transition={{ 
+                duration: 10, 
+                repeat: Infinity, 
+                ease: "linear" 
+              }}
+            />
             <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-white dark:border-gray-800">
               <Image
                 src="/images/profile.jpg"
@@ -211,29 +219,30 @@ export default function Hero() {
                 priority
               />
             </div>
-            
-            {/* Floating badges */}
-            <motion.div
-              className="absolute -right-4 top-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-10"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1, duration: 0.5 }}
-              whileHover={{ y: -5 }}
-            >
-              <TechIcon name="React" size={20} className="mr-2" />
-              <span className="text-sm font-medium">React Expert</span>
-            </motion.div>
-            
-            <motion.div
-              className="absolute -left-6 bottom-10 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-10"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2, duration: 0.5 }}
-              whileHover={{ y: -5 }}
-            >
-              <TechIcon name="Node.js" size={20} className="mr-2" />
-              <span className="text-sm font-medium">Full Stack</span>
-            </motion.div>
+          </div>
+          
+          {/* Floating badges - moved outside the profile image container */}
+          <motion.div
+            className="absolute -right-4 top-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            whileHover={{ y: -5 }}
+          >
+            <TechIcon name="React" size={20} className="mr-2" />
+            <span className="text-sm font-medium">React Expert</span>
+          </motion.div>
+          
+          <motion.div
+            className="absolute -left-6 bottom-1/4 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+            whileHover={{ y: -5 }}
+          >
+            <TechIcon name="Node.js" size={20} className="mr-2" />
+            <span className="text-sm font-medium">Full Stack</span>
+          </motion.div>
           </div>
         </motion.div>
       </div>
