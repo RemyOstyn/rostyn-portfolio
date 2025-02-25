@@ -37,30 +37,30 @@ export default function Hero() {
 
   // Animate on scroll
   useEffect(() => {
-    // Function to handle scroll
+    let mounted = false;
     const handleScroll = () => {
-      if (isMountedRef.current) {
+      if (mounted && isMountedRef.current && controls) {
         const scrollY = window.scrollY;
-        controls.start({ y: scrollY * 0.1 }).catch(() => {
-          // Ignore any animation cancellation errors
+        requestAnimationFrame(() => {
+          controls.start({ y: scrollY * 0.1 }).catch(() => {
+            // Ignore animation cancellation
+          });
         });
       }
     };
-    
-    // Setup scroll listener after a delay to ensure mounting is complete
-    const setupScrollListener = () => {
+
+    // Ensure component is fully mounted before setting up scroll
+    const mountTimeout = setTimeout(() => {
+      mounted = true;
       if (isMountedRef.current) {
         window.addEventListener("scroll", handleScroll);
-        // Initial call to set position
-        handleScroll();
+        handleScroll(); // Initial position
       }
-    };
-    
-    // Wait a bit before adding scroll listener
-    const timer = setTimeout(setupScrollListener, 200);
-    
+    }, 500);
+
     return () => {
-      clearTimeout(timer);
+      mounted = false;
+      clearTimeout(mountTimeout);
       window.removeEventListener("scroll", handleScroll);
     };
   }, [controls]);
