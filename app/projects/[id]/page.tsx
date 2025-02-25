@@ -1,9 +1,16 @@
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 import { projects } from "../../data/projects";
 import ProjectDisplay from "@/app/components/ProjectDisplay";
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+type Props = {
+  params: { id: string }
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const project = projects.find((p) => p.id === params.id);
   
   if (!project) {
@@ -24,7 +31,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+export default function ProjectPage({ params }: Props) {
   const project = projects.find((p) => p.id === params.id);
 
   if (!project) {
