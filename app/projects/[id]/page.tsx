@@ -58,7 +58,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </Link>
 
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-          <div className="relative w-full aspect-video">
+          <div className="relative w-full" style={{ aspectRatio: '16/7' }}>
             <Image
               src={project.imageUrl}
               alt={project.title}
