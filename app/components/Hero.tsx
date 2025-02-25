@@ -66,7 +66,8 @@ export default function Hero() {
       {/* Animated background shapes - increased size and opacity for better visibility */}
       <motion.div 
         className="absolute top-20 left-10 w-96 h-96 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-40 z-0"
-        animate={{ 
+        initial={{ x: 0, y: 0 }}
+        whileInView={{ 
           x: [0, 30, 0],
           y: [0, 50, 0],
         }}
@@ -79,7 +80,8 @@ export default function Hero() {
       
       <motion.div 
         className="absolute bottom-20 right-10 w-[30rem] h-[30rem] bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 dark:opacity-40 z-0"
-        animate={{ 
+        initial={{ x: 0, y: 0 }}
+        whileInView={{ 
           x: [0, -30, 0],
           y: [0, -50, 0],
         }}
