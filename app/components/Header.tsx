@@ -7,32 +7,41 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState<string>("home");
 
   useEffect(() => {
+    // Initial check for active section
+    checkActiveSection();
+    
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
-      // Determine active section based on scroll position
+      checkActiveSection();
+    };
+
+    function checkActiveSection() {
       const sections = ["home", "projects", "skills", "contact"];
       const scrollPosition = window.scrollY + 100;
       
-      for (const section of sections) {
+      // If at the top of the page, set to home
+      if (scrollPosition < 300) {
+        setActiveSection("home");
+        return;
+      }
+      
+      // Check each section
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
           
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
+          if (scrollPosition >= offsetTop - 200) {
             setActiveSection(section);
             break;
           }
         }
       }
-    };
+    }
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -57,7 +66,13 @@ export default function Header() {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="relative z-10">
+        <div 
+          className="relative z-10 cursor-pointer"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setActiveSection("home");
+          }}
+        >
           <motion.div 
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
@@ -72,7 +87,7 @@ export default function Header() {
               </div>
             </div>
           </motion.div>
-        </Link>
+        </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
@@ -88,10 +103,13 @@ export default function Header() {
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
-                    const element = document.getElementById(item.href.substring(1));
+                    const sectionId = item.href.substring(1);
+                    const element = document.getElementById(sectionId);
                     if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                      setActiveSection(item.href.substring(1));
+                      const yOffset = -80; // Adjust for header height
+                      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                      setActiveSection(sectionId);
                     }
                   }}
                 >
@@ -168,10 +186,13 @@ export default function Header() {
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          const element = document.getElementById(item.href.substring(1));
+                          const sectionId = item.href.substring(1);
+                          const element = document.getElementById(sectionId);
                           if (element) {
-                            element.scrollIntoView({ behavior: 'smooth' });
-                            setActiveSection(item.href.substring(1));
+                            const yOffset = -80; // Adjust for header height
+                            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            window.scrollTo({ top: y, behavior: 'smooth' });
+                            setActiveSection(sectionId);
                             setMobileMenuOpen(false);
                           }
                         }}
