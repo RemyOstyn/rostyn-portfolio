@@ -1,7 +1,23 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
 import { projects } from "../../data/projects";
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const project = projects.find((p) => p.id === params.id);
+  
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  return {
+    title: `${project.title} | Portfolio`,
+    description: project.description,
+  };
+}
 
 export function generateStaticParams() {
   return projects.map((project) => ({

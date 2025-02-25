@@ -81,6 +81,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           <Link
             href={`/projects/${project.id}`}
             className="relative inline-flex items-center px-4 py-2 overflow-hidden text-sm font-medium text-white bg-blue-600 rounded-md group-hover:bg-blue-700 transition-colors"
+            prefetch={true}
           >
             <span className="relative">View Details</span>
             <svg 
