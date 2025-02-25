@@ -218,7 +218,7 @@ export default function Hero() {
             </div>
           </div>
           
-          {/* Skill badges - positioned better and with animation */}
+          {/* Skill badges - multiple badges positioned around the profile */}
           <motion.div
             className="absolute right-0 md:right-5 top-0 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
             initial={{ opacity: 0, y: 20 }}
@@ -241,6 +241,55 @@ export default function Hero() {
           >
             <TechIcon name="Node.js" size={20} className="mr-2" />
             <span className="text-sm font-medium">Full Stack</span>
+          </motion.div>
+          
+          {/* Additional badges */}
+          <motion.div
+            className="absolute right-0 md:right-5 bottom-0 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.4, duration: 0.5 }}
+            whileHover={{ x: -5 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <TechIcon name="TypeScript" size={20} className="mr-2" />
+            <span className="text-sm font-medium">TypeScript Pro</span>
+          </motion.div>
+          
+          <motion.div
+            className="absolute left-0 md:left-5 top-0 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.6, duration: 0.5 }}
+            whileHover={{ x: 5 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <TechIcon name="Tailwind CSS" size={20} className="mr-2" />
+            <span className="text-sm font-medium">UI Designer</span>
+          </motion.div>
+          
+          <motion.div
+            className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.8, duration: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <TechIcon name="AWS" size={20} className="mr-2" />
+            <span className="text-sm font-medium">Cloud Expert</span>
+          </motion.div>
+          
+          <motion.div
+            className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 bg-white dark:bg-gray-800 rounded-lg shadow-lg px-3 py-2 flex items-center z-20"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 2, duration: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <TechIcon name="GraphQL" size={20} className="mr-2" />
+            <span className="text-sm font-medium">API Architect</span>
           </motion.div>
         </motion.div>
       </div>
