@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import TechIcon from "./TechIcon";
@@ -14,6 +14,15 @@ const showcaseTechnologies = [
 export default function Hero() {
   const [currentTechIndex, setCurrentTechIndex] = useState(0);
   const controls = useAnimation();
+  const isMountedRef = useRef(false);
+  
+  // Set mounted ref after component mounts
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
   
   // Rotate through technologies
   useEffect(() => {
@@ -28,30 +37,29 @@ export default function Hero() {
 
   // Animate on scroll
   useEffect(() => {
-    let isMounted = true;
-    let mounted = false;
-
+    // Function to handle scroll
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (isMounted && controls && mounted) {
+      if (isMountedRef.current) {
+        const scrollY = window.scrollY;
         controls.start({ y: scrollY * 0.1 }).catch(() => {
           // Ignore any animation cancellation errors
         });
       }
     };
-
-    // Ensure component is mounted before starting animations
-    const timer = setTimeout(() => {
-      mounted = true;
-      if (isMounted) {
+    
+    // Setup scroll listener after a delay to ensure mounting is complete
+    const setupScrollListener = () => {
+      if (isMountedRef.current) {
+        window.addEventListener("scroll", handleScroll);
+        // Initial call to set position
         handleScroll();
       }
-    }, 100);
+    };
     
-    window.addEventListener("scroll", handleScroll);
+    // Wait a bit before adding scroll listener
+    const timer = setTimeout(setupScrollListener, 200);
+    
     return () => {
-      isMounted = false;
-      mounted = false;
       clearTimeout(timer);
       window.removeEventListener("scroll", handleScroll);
     };
@@ -193,17 +201,6 @@ export default function Hero() {
                 </motion.div>
               ))}
             </div>
-            
-            {/* <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-              <span className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-md mr-2 mb-2">
-                <TechIcon name="Offline-First" size={14} className="mr-1" />
-                Offline-First
-              </span>
-              <span className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded-md mr-2 mb-2">
-                <TechIcon name="Expo" size={14} className="mr-1" />
-                Expo
-              </span>
-            </div> */}
           </motion.div>
         </motion.div>
         
